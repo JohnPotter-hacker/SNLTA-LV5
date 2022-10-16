@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bai4.css">
+    <title>Document</title>
+</head>
+<body style = "display: flex;justify-content: center;">
+    <div class = "bg">
+        <img src = "doraemon.png" width="150px" height="150px" class = "doraemon">
+        <div class="main">
+            <h1 style = "margin: 0;">ỨNG DỤNG CHỌN XE NGẪU NHIÊN</h1>
+            <br>
+            <h4 style="margin-top: 0">BẤM VÀO NÚT ĐỂ LỰA CHỌN NGẪU NHIÊN CÁC BỘ PHẬN</h3>
+            <span>Bánh xe: </span>
+            <button style="height: 25px;" onclick="Banhxe()">Bấm vào</button>
+            <br><span id = "banhxe"></span><br>
+            <span>Thân xe: </span>
+            <button style="height: 25px;" onclick="Than()">Bấm vào</button>
+            <br><span id = "Than"></span><br>
+            <span>Màu xe: </span>
+            <button style="height: 25px;"onclick = "Color()">Bấm vào</button>
+            <br><span id = "Color"></span><br>
+            <span>Chất liệu: </span>
+            <button style="height: 25px;" onclick="Chatlieu()">Bấm vào</button>
+            <br><span id = "Chatlieu"></span><br>
+            <span id = "BikeRes">Kết quả xe: </span>
+            <br><br>
+            <button style="height: 25px;" onclick="BikeRes()">Bấm vào</button>
+        </div>
+    </div>
+    <script>
+        BikeInfo = {"banh":["Chuyên dụng","Cao su","Leo núi"],"Color":["Đỏ","Xanh","Vàng","Đen"],
+                    "Than":["Thẳng","Cong","Vòng"],"Chatlieu":["Cacbon","Gỗ","Inox"]}
+        lop = ""; 
+        color = "";
+        than = "";
+        chatlieu = "";
+        function Banhxe(){
+            lop = BikeInfo["banh"][Math.floor(Math.random()*BikeInfo["banh"].length)]
+            document.getElementById("banhxe").innerHTML = lop
+        }
+        function Than(){
+            than = BikeInfo["Than"][Math.floor(Math.random()*BikeInfo["Than"].length)]
+            document.getElementById("Than").innerHTML = than
+        }
+        function Color(){
+            color = BikeInfo["Color"][Math.floor(Math.random()*BikeInfo["Color"].length)]
+            document.getElementById("Color").innerHTML = color
+        }
+        function Chatlieu(){
+            chatlieu = BikeInfo["Chatlieu"][Math.floor(Math.random()*BikeInfo["Chatlieu"].length)]
+            document.getElementById("Chatlieu").innerHTML = chatlieu
+            console.log(chatlieu)
+        }
+        function BikeRes(){
+            document.getElementById("BikeRes").innerHTML = "Bánh xe: " + lop + ", " + "Thân xe: " + than + ", " + "Màu xe: " + color + ', ' + "Chất liệu: " + chatlieu
+        }
+    </script>
+</body>
+</html>

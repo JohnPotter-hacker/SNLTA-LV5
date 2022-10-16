@@ -1,0 +1,31 @@
+.bg{
+    background: rgb(7,55,119);
+    background: linear-gradient(183deg, rgba(7,55,119,1) 19%, rgba(121,9,99,1) 29%, rgba(4,130,151,1) 45%, rgba(0,255,203,1) 100%);
+    width: 800px;
+    height: 500px;
+    border-radius: 30px;
+    margin-top: 100px;
+    padding: 60px 60px 150px 60px ;
+}
+.doraemon{
+    position: relative;
+    left: 770px;
+    bottom: 120px;
+}
+
+.main{
+    padding-top: 20px;
+    color: aqua;
+    text-align: center;
+    margin-right: 0;
+    background: white;
+    width: 680px;
+    height: 400px;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.main span{
+    font-size: 20px;
+    color:blueviolet
+}
