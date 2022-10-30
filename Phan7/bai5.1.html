@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bai5.1.css">
+    <title>Document</title>
+    <style>
+        img{
+            width: fit-content;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class = "abc">
+        <h1 style = "color:aqua;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;">ỨNG DỤNG DANH SÁCH SIÊU XE</h1>
+        <div class = "main">
+            <h5 style = "margin-bottom:0">Bấm nút hiển thị danh sách siêu xe</h5>
+            <button onclick="list()">Bấm vào</button>
+            <div id = "Danhsach">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        output = ""
+        cars = {
+            sieuxe: [
+                {type: "BMW",model: ["BMWX3","BMWX5","BMWX6"],image: "https://di-uploads-pod20.dealerinspire.com/southmotorsbmw/uploads/2021/11/330i-sedan.png"},
+                {type: "Lamborghini",model: ["1","2","3"],image: "640-ngoai-that-xe-lamborghini-sian-removebg-preview.png"}
+            ],
+            List: function(){
+                for(let x of this.sieuxe){
+                    output += x.type + "<br>"
+                    output += "<img src = " + x.image + "><br>";
+                    for(let v of x.model){
+                        output += v + "<br>" 
+                    }
+                }
+            }
+        }
+    function list(){
+        cars.List();
+        document.getElementById("Danhsach").innerHTML = output;
+        output = "";
+    }
+    </script>
+
+</body>
+</html>

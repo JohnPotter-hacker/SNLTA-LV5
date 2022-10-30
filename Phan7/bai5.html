@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bai5.css">
+    <title>Document</title>
+</head>
+<body style = "display: flex;justify-content: center;">
+    <div class = "bg">
+        <img src = "doraemon.png" width="150px" height="150px" class = "doraemon">
+        <div class="main">
+            <h1 style = "margin: 0;">ỨNG DỤNG KIỂM TRA TÌNH TRẠNG XE </h1>
+            <br>
+            <h4 style="margin-top: 0">BẤM VÀO NÚT ĐỂ KIỂM TRA BỘ PHẬN</h3>
+            <span>Bánh xe: </span>
+            <button style="height: 25px;" onclick="Banhxe()">Bấm vào</button>
+            <br><span id = "banhxe"></span><br>
+            <span>Thân xe: </span>
+            <button style="height: 25px;" onclick="Than()">Bấm vào</button>
+            <br><span id = "Than"></span><br>
+            <span>Đầu xe: </span>
+            <button style="height: 25px;"onclick = "Head()">Bấm vào</button>
+            <br><span id = "head"></span><br>
+        </div>
+    </div>
+    <script>
+        checkTire = ""; checkBody = ""; checkHead = "";
+        cars = {
+            model: "Lamborghini",
+            color: "Gold",
+            material: "Diamond",
+
+            tire_status: "OK",
+            body_status: "Not OK",
+            head_status: "Ok",
+
+            print_Car: function(){
+                car += this.model + ", " + this.color + ", " + this.material;
+            },
+            TireCheck: function(){
+                checkTire += "is " + this.tire_status +" "
+            },
+            BodyCheck: function(){
+                checkBody += "is " + this.body_status + " "
+            },
+            HeadCheck: function(){
+                checkHead += "is " + this.head_status + " "
+            }
+        }
+        function Banhxe(){
+            cars.TireCheck();
+            document.getElementById("banhxe").innerText = checkTire;
+        }
+        function Than(){
+            cars.BodyCheck();
+            document.getElementById("Than").innerText = checkBody;
+        }
+        function Head(){
+            cars.HeadCheck();
+            document.getElementById("head").innerText = checkHead;
+        }
+    </script>
+</body>
+</html>
