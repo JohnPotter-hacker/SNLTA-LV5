@@ -32,3 +32,43 @@
     right: 500px;
     bottom: 200px;
 }
+
+.end{
+    background:rgba(170, 44, 65, 0.712);
+    text-align: center;
+}
+
+.insideEnd{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.insideEnd img{
+    width: 200px;
+    height: 200px;
+}
+
+@media screen  and (max-width: 1024px){
+    .phanthan img{
+        position:absolute;
+        left: 570px;
+        top: 100px;
+    }
+}
+
+@media screen  and (max-width: 768px){
+    .phanthan img{
+        position:absolute;
+        width: 290px;
+        height: 230px;
+        left: 250px;
+        top: 269px;
+    }
+}
+
+@media screen  and (max-width: 320px){
+ 
+}
+
