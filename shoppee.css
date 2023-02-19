@@ -1,0 +1,68 @@
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.head1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+}
+
+.search{
+    margin-left: 70%; 
+    border: 1px solid black; 
+    border-radius: 50px;
+}
+
+.item .image{
+    width: 300px;
+    height: 300px;
+}
+
+.about{
+    height: 700px;
+    background: url('https://i.pinimg.com/originals/2f/60/6a/2f606ad14bf9171e5f41b42a01b4441f.jpg') no-repeat   ;
+    background-size: cover;
+}
+
+.intro{
+    height:100%;
+    width: 40%;
+    display: inline-block;
+}
+
+.intro .ct{
+    padding: 2%;
+    margin-top: 48%;
+    margin-bottom: 0;
+}
+
+.introimg{
+    display: inline-block;
+    height:100%;
+    width: 60%;
+    float: right;
+    background: no-repeat url('https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1210,c_limit/4701433e-6167-49bb-86c6-8c1bd51554e0/nike-just-do-it.jpg');
+    background-size: cover;
+}
+
+.products{
+   height: 292px;
+   width: 292px;
+   border: grey solid 1px; 
+   margin-right:2%;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
