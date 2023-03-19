@@ -58,10 +58,10 @@
         <div class = 'introimg'></div>
    </div>
    <br> <br>
-   <div class = "head">
+   <div class = "head"> 
         <div>
-        <h1>Featured Products</h1>
-    </div>
+            <h1>Featured Products</h1>
+        </div>
         <Br><br>
         <div class = 'head1'>
                 <a href = '#'>All</a>
@@ -126,29 +126,70 @@
             </div>
         </div>
     </div>
-    <div id = 'sum'></div>
+
+    <table>
+        <th>Tên Sản Phẩm</th>
+        <th> Giá tiền</th>
+        <th>Số lượng Sản phẩm</th>
+    </table>
+    
     <br><br>
-    <br> <Br>
+    <img src = 'logo.jpg' style = 'border-right: 1px grey solid;display:block'>
     <div class="foot">
-        <h1>News</h1>
-        <h1>Customer service</h1>
-        <h1>About us</h1>
+        <div>
+            <h3><b>Tổng đài</b></h3>
+            <div class="foot">
+                <p>Mua hàng: </p>
+                <a href = '#'>1900.3945.98</a>
+            </div>
+
+            <div class="foot">
+                <p>CSKH:     </p>
+                <a href = '#'>1800.3249.34</a> 
+            </div>
+
+            <div class="foot">
+                <p>Kỹ thuật: </p>
+                <a href = '#'>1500.2334.23</a>
+            </div>
+        </div>
+
+        <div>
+            <h3><b>Hệ thống cửa hàng</b></h3>
+            <p>Xem 100 cửa hàng</p>
+            <p>Nội quy cửa hàng</p>
+            <p>Chất lượng phục vụ</p>
+            <p>Chính sách bảo hành và đổi trả</p>
+        </div>
+
+        <div>
+            <h3><b>Hỗ trợ khách hàng</b></h3>
+            <p>Điều kiện giao dịch chung</p>
+            <p>Hướng dẫn mua hàng online</p>
+            <p>Chính sách giao hàng</p>
+            <p>hướng dẫn thanh toán</p>
+        </div>
+
+        <div>
+            <br>
+            <h3><b>Về thương hiệu Einstein</b></h3>
+            <p>Tích điểm quà tặng VIP</p>
+            <p>Giới thiệu Einstein</p>
+            <p>Bán hàng doanh nghiệp</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Xem bản mobile</p>
+        </div>
+
+        <div>
+            <h3><b>Trung tâm bảo hành EinsCare</b></h3>
+            <p>Giới thiệu Einscare</p>
+            <br><br><br><br><Br>
+        </div>
     </div>
-    <div class="foot">
-        <p>Contact</p>
-        <p>Facebook</p>
-        <p>Instagram</p>
-    </div>
-    <div class="foot">
-        <p>Thanh Dat</p>
-        <p>Tuyet Ngoc</p>
-        <p>ZuckerBerg</p>
-    </div>
-    <div class="foot">
-        <p>Chung to</p>
-        <p>Rat Yeu</p>
-        <p>Cac ban</p>
-    </div>
+    <h4 style = 'color: grey;margin-top:0'>KẾT NỐI VỚI CHÚNG TÔI</h4>
+    <a href = '' style = 'margin-left:0'><i class="fa-brands fa-facebook fa-3x"></i></a>
+    <a href = '' style = 'margin-left:0'><i class="fa-brands fa-youtube fa-3x"></i></a>
+    <a href = '' style = 'margin-left:0'><i class="fa-brands fa-twitter fa-3x"></i></a>
 </body>
 <script src="./jquery-2.2.4.min.js"></script>
     <!-- Include Multislider -->
@@ -162,8 +203,7 @@
     function show(){
         var addTh = document.createElement('th')
         var thcontent =
-        `
-        <th>Tên Sản Phẩm</th>
+        `<th>Tên Sản Phẩm</th>
         <th>Số lượng Sản phẩm</th>
         <th> Giá tiền</th>
         `
@@ -175,14 +215,20 @@
     const btn = document.querySelectorAll('button')
     btn.forEach(function(button,a){
         button.addEventListener('click',function(event){
+            button.style = 'display:none';
+            var addh3 = document.createElement('h4')
+            addh3.style = 'color:red;'
+            addh3.innerHTMl = 'Hàng này đã được chọn !';
+            console.log(addh3)
             var btnItem = event.target
             var product = btnItem.parentElement
+            product.append(addh3)
             var productImg = product.querySelector('img').src 
             var productName = product.querySelector('p').innerText
             var productPrice = product.querySelector('h4').innerText
             console.log(productImg,productName,productPrice)
-            //addtoCart(productImg,productName,productPrice);
-            tongtien(productPrice)
+            addtoCart(productImg,productName,productPrice);
+            //tongtien(productPrice)
         })
     });
     function addtoCart(Img,name,price){
@@ -190,13 +236,14 @@
 
         var trContent = `
         <tr>
-            <td> <img class = 'height: 5%; width: 100%' src = '${Img}'> </td>
-            <td> <span>Gia: ${price}</span></td>
-        <td>${name}></td>
+            <td> <img style = 'height: 5%; width: 100%' src = '${Img}'> </td>
+            <td> <span>${price}</span></td>
+            <td>${name}></td>
         </tr>`
 
         addTr.innerHTML = trContent
         var cartTable = document.querySelector('tbody')
+        console.log(cartTable)
         cartTable.append(addTr)
     }
     tong = 0;
