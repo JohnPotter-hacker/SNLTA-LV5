@@ -91,3 +91,16 @@ a{
     font-size: 12px;
 }
 
+td{
+    width: 500px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+table{
+    border: solid black 1px;
+}
+
+table th{
+    border: solid black 1px;
+}
